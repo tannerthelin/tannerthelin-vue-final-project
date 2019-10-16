@@ -20,7 +20,7 @@ export default {
         display: flex;
         align-content: center;
         justify-content: space-between;
-        padding: 40px;
+        padding: 30px;
     }
 
     .menu-dots {
