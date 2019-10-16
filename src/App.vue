@@ -17,11 +17,27 @@ export default {
 </script>
 
 <style>
+@import url('https://rsms.me/inter/inter.css');
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+body, html {
+  height: 100%;
+  margin: 0px;
+  font-size: 16px;
+}
+
+.border-container {
+  background-color: #f9f9fa;
+  border: 15px solid white;
+  margin: 0px;
+  box-sizing: border-box;
+  height: 100%;
 }
 </style>
