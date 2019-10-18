@@ -28,7 +28,6 @@ export default {
 
     .header-container {
         display: flex;
-        align-content: center;
         justify-content: space-between;
         padding: 30px;
         user-select: none;
@@ -36,10 +35,11 @@ export default {
 
     .main-nav {
         position: absolute;
-        right: 48px;
+        right: 46px;
         top: 76px;
         display: block;
         min-width: 160px;
+        z-index: 3;
     }
 
     .main-nav-content{

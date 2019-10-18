@@ -38,20 +38,16 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+    background-color: #F9F9FA;
+    padding-bottom: 240px;
+    min-height: 100vh;
+    border: 15px solid white;
   }
 
   body, html {
     height: 100%;
     margin: 0px;
     font-size: 16px;
-  }
-
-  .border-container {
-    background-color: #f9f9fa;
-    border: 15px solid white;
-    margin: 0px;
-    box-sizing: border-box;
-    height: 100%;
   }
 
   h2 {
