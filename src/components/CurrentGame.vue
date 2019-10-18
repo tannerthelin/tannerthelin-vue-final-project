@@ -4,8 +4,8 @@
             <div class="left-content">
                 <div class="image-container"></div>
                 <div class="text-container">
-                    <h2>Game Title Here</h2>
-                    <h3>Been playing for 2 months</h3>
+                    <h2>{{ game.title }}</h2>
+                    <h3>Been playing for {{ game.numberOfDays }} days</h3>
                 </div>
             </div>
             <div class="menu-dots small"></div>
@@ -14,8 +14,10 @@
 </template>
 
 <script>
+import { eventBus } from '../main.js';
+
 export default {
-    
+    props: ['game']
 }
 </script>
 
@@ -30,6 +32,7 @@ export default {
         background-color: white;
         border-radius: 4px;
         box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.05);
+        margin-bottom: 12px;
 
     }
 
