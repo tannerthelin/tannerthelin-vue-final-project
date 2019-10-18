@@ -1,43 +1,85 @@
 <template>
   <div id="app">
     <app-header></app-header>
+    <div class="content-container">
+      <div class="top-container">
+        <current-list></current-list>
+        <activity-list></activity-list>
+      </div>
+      <logbook-list></logbook-list>
+    </div>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
 import Header from './components/Header.vue';
+import CurrentList from './components/CurrentList.vue';
+import ActivityList from './components/ActivityList.vue';
+import LogbookList from './components/LogbookList.vue';
 
 export default {
   name: 'app',
   components: {
     appHeader: Header,
+    currentList: CurrentList,
+    activityList: ActivityList,
+    logbookList: LogbookList
+
   }
 }
 </script>
 
 <style>
-@import url('https://rsms.me/inter/inter.css');
+  @import url('https://rsms.me/inter/inter.css');
 
-#app {
-  font-family: 'Inter', sans-serif; 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #app {
+    font-family: 'Inter', sans-serif; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+  }
 
-body, html {
-  height: 100%;
-  margin: 0px;
-  font-size: 16px;
-}
+  body, html {
+    height: 100%;
+    margin: 0px;
+    font-size: 16px;
+  }
 
-.border-container {
-  background-color: #f9f9fa;
-  border: 15px solid white;
-  margin: 0px;
-  box-sizing: border-box;
-  height: 100%;
-}
+  .border-container {
+    background-color: #f9f9fa;
+    border: 15px solid white;
+    margin: 0px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #818181;
+  }
+
+  .content-container {
+    max-width: 960px;
+    margin: auto;
+  }
+
+  .top-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .list-container {
+    height: 575px;
+    background-color: #F6F6F6;
+    border: 1px solid #E7E7E8;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .flex-grow {
+    width: 50%;
+    padding: 12px;
+  }
 </style>
