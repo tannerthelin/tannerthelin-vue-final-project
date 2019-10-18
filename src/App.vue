@@ -54,6 +54,14 @@ export default {
     height: 100%;
   }
 
+  h2 {
+        font-size: 16px;
+        font-weight: 400;
+        color: black;
+        letter-spacing: 0.36px;
+        margin: 0px;
+    }
+
   h3 {
     font-size: 14px;
     font-weight: 400;
@@ -74,12 +82,34 @@ export default {
     height: 575px;
     background-color: #F6F6F6;
     border: 1px solid #E7E7E8;
-    width: 100%;
     border-radius: 4px;
+    padding: 16px;
   }
 
   .flex-grow {
     width: 50%;
     padding: 12px;
   }
+
+  .menu-dots {
+        background-image: url("./assets/images/menu-dots.svg");
+        background-position: center;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .menu-dots:hover {
+        background-image: url("./assets/images/menu-dots-black.svg");
+    }
+
+    .small {
+      width: 16px;
+      height: 40px;
+      background-size: contain;
+      display: block;
+    }
 </style>

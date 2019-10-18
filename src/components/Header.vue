@@ -34,20 +34,6 @@ export default {
         user-select: none;
     }
 
-    .menu-dots {
-        background-image: url("../assets/images/menu-dots.svg");
-        background-position: center;
-        width: 32px;
-        height: 32px;
-        background-repeat: no-repeat;
-        display: inline-block;
-        cursor: pointer;
-    }
-
-    .menu-dots:hover {
-        background-image: url("../assets/images/menu-dots-black.svg");
-    }
-
     .main-nav {
         position: absolute;
         right: 48px;
