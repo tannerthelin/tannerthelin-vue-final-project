@@ -3,13 +3,31 @@
         <div class="image-container"></div>
         <h2>{{game.title}}</h2>
         <h3>Jan 8, 2020</h3>
-        <p>[rating here]</p>
+        <heart-rating 
+            v-model="rating"
+            :item-size="10"
+            inactive-color="#D8D8D9"
+            active-color="#F56A72"
+            :increment="1"
+            border-color="transparent"
+            :show-rating="false"
+        ></heart-rating>
     </div>
 </template>
 
 <script>
+import {HeartRating} from 'vue-rate-it';
+
 export default {
-    props: ['game']
+    components: {
+        HeartRating
+    },
+    data() {
+        return {
+            rating: 3
+        };
+    },
+    props: ['game'],
 }
 </script>
 
@@ -34,10 +52,10 @@ export default {
     h3 {
         margin: 0px;
         margin-top: 5px;
+        margin-bottom: 10px;
     }
 
     h2 {
         font-weight: 500;
     }
-
 </style>

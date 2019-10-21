@@ -17,6 +17,7 @@ import Header from './components/Header.vue';
 import CurrentList from './components/CurrentList.vue';
 import ActivityList from './components/ActivityList.vue';
 import LogbookList from './components/LogbookList.vue';
+import {HeartRating} from 'vue-rate-it';
 
 export default {
   name: 'app',

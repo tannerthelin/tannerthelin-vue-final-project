@@ -24,9 +24,7 @@ export default {
         currentGame: CurrentGame
     },
     methods: {
-        editList() {
-            eventBus.$emit('');
-        }
+
     }
     
 }
