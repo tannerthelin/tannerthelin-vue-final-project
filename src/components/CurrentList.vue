@@ -2,7 +2,7 @@
     <div class="flex-grow">
         <h3>Currently playing</h3>
         <div class="list-container">
-            <current-game v-for="game in currentGames" :game="game" :key="game"></current-game>
+            <current-game v-for="game in currentGames" :game="game" :key="game.id"></current-game>
         </div>
     </div>
 </template>
