@@ -8,7 +8,10 @@
                     <h3>Been playing for {{ game.numberOfDays }} days</h3>
                 </div>
             </div>
-            <div class="menu-dots small"></div>
+            <div class="current-actions">
+                <div class="complete-button"></div>
+                <div class="trash-button"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -35,14 +38,14 @@ export default {
 
     }
 
-    .current-container:hover .small{
+    .current-container:hover .current-actions{
         opacity: 1;
     }
 
     .current-content {
         display: flex;
         justify-content: space-between;
-        align-content: center !important;
+        align-content: stretch;
         padding: 16px;
     }
 
@@ -69,6 +72,43 @@ export default {
         font-size: 13px;
         margin: 0px;
         margin-top: 3px;
+    }
+
+    .current-actions {
+        height: 40px;
+        display: flex;
+        justify-content: stretch;
+        align-content: stretch;
+        opacity: 0;
+        transition: 0.15s ease;
+    }
+
+    .complete-button {
+        width: 33px;
+        background-position: center;
+        background-image: url('../assets/images/icon-complete.png');
+        background-size: contain;
+        display: block;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    .complete-button:hover {
+        background-image: url('../assets/images/icon-complete-hover.png');
+    }
+
+    .trash-button {
+        width: 33px;
+        background-position: center;
+        background-image: url('../assets/images/icon-trash.png');
+        background-size: contain;
+        display: block;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    .trash-button:hover {
+        background-image: url('../assets/images/icon-trash-hover.png');
     }
 
 </style>
