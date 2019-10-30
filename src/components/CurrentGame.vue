@@ -9,8 +9,8 @@
                 </div>
             </div>
             <div class="current-actions">
-                <div class="complete-button" v-tooltip="'Mark as Complete'"></div>
-                <div class="trash-button" v-tooltip="'Remove'"></div>
+                <div class="complete-button"></div>
+                <div class="trash-button"></div>
             </div>
         </div>
     </div>
@@ -18,10 +18,6 @@
 
 <script>
     import { VTooltip, VPopover, VClosePopover } from 'v-tooltip'
-
-    // Vue.directive('tooltip', VTooltip)
-    // Vue.directive('close-popover', VClosePopover)
-    // Vue.component('v-popover', VPopover)
 
     export default {
         props: ['game'],
