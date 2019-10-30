@@ -120,4 +120,28 @@ export default {
       background-size: contain;
       display: block;
     }
+
+    @import url('./assets/extra-styles/tooltip-styles.css');
+    /* .tooltip {
+        display: block !important;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        z-index: 10000;
+    }
+
+    .tooltip .tooltip-inner {
+        background: rgba(0, 0, 0, .5);
+        color: white;
+        border-radius: 16px;
+        padding: 5px 10px 4px;
+    }
+
+    .tooltip .tooltip-arrow {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      position: absolute;
+      margin: 5px;
+      border-color: black;
+    } */
 </style>

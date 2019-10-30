@@ -9,18 +9,28 @@
                 </div>
             </div>
             <div class="current-actions">
-                <div class="complete-button"></div>
-                <div class="trash-button"></div>
+                <div class="complete-button" v-tooltip="'Mark as Complete'"></div>
+                <div class="trash-button" v-tooltip="'Remove'"></div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import { VTooltip, VPopover, VClosePopover } from 'v-tooltip'
 
-export default {
-    props: ['game']
-}
+    // Vue.directive('tooltip', VTooltip)
+    // Vue.directive('close-popover', VClosePopover)
+    // Vue.component('v-popover', VPopover)
+
+    export default {
+        props: ['game'],
+        directives: {
+            'tooltip': VTooltip,
+            'close-popover': VClosePopover,
+            'v-popover': VPopover
+        }
+    }
 </script>
 
 <style scoped>
@@ -110,5 +120,7 @@ export default {
     .trash-button:hover {
         background-image: url('../assets/images/icon-trash-hover.png');
     }
+
+    
 
 </style>
