@@ -61,6 +61,7 @@
         background-image: url('../assets/images/placeholder-small.png');
         display: inline-block;
         background-size: contain;
+        background-repeat: no-repeat;
     }
 
     .left-content {
