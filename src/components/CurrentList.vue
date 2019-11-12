@@ -2,7 +2,7 @@
     <div class="flex-grow">
         <h3>Currently playing</h3>
         <div class="list-container">
-            <current-game v-for="game in currentGames" :game="game" :key="game.id"></current-game>
+            <current-game v-for="game in games" :game="game" :key="game.id"></current-game>
                 <button class="add-button" v-on:click="addSelected = !addSelected"><i class="fa fa-plus-square-o"></i>Add new</button>                
             <input type="text" class="new-input" placeholder="Search for game..." v-show="addSelected">            
         </div>
@@ -13,13 +13,13 @@
 import CurrentGame from './CurrentGame.vue';
 
 export default {
+    computed: {
+        games() {
+            return this.$store.getters.games;
+        }
+    },
     data () {
         return {
-            currentGames: [
-                  {title:"Untitled Goose Game", numberOfDays: 5},
-                  {title:"Hollow Knight", numberOfDays: 12},
-                  {title:"Modern Warfare", numberOfDays: 24},
-              ],
             addSelected: false
         };
     },

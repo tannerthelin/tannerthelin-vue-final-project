@@ -38,6 +38,9 @@ export default {
     axios
       .get('https://api.rawg.io/api/games')
       .then(response => (this.info = response))
+  },
+  created() {
+    this.$store.dispatch('initGames');
   }
 }
 </script>
