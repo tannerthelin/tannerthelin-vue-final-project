@@ -41,6 +41,8 @@ export default {
   },
   created() {
     this.$store.dispatch('initGames');
+    this.$store.dispatch('initLoggedGames');
+    this.$store.dispatch('initActivity');
   }
 }
 </script>

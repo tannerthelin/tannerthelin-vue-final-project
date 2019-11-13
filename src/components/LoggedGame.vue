@@ -2,7 +2,7 @@
     <div class="main-container">
         <div class="image-container"></div>
         <h2>{{game.title}}</h2>
-        <h3>Jan 8, 2020</h3>
+        <h3>{{game.finished}}</h3>
         <heart-rating 
             v-model="rating"
             :item-size="10"
@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-            rating: 3
+            rating: this.game.rating
         };
     },
     props: ['game'],

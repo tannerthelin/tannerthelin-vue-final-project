@@ -13,18 +13,14 @@ import {HeartRating} from 'vue-rate-it';
 
 
 export default {
+    computed: {
+        loggedGames() {
+            return this.$store.getters.loggedGames;
+        }
+    },
     data () {
         return {
-            loggedGames: [
-                  {title:"Untitled Goos...", date: 'Jan 8, 2020'},
-                  {title:"Hollow Knight", date: 'Dec 24, 2019'},
-                  {title:"Modern Warfare", date: 'Nov 14, 2019'},
-                  {title:"Fortnite", date: 'Jan 8, 2020'},
-                  {title:"Celeste", date: 'Dec 24, 2019'},
-                  {title:"Destiny 2", date: 'Nov 14, 2019'},
-                  {title:"Link's Awaken...", date: 'Jan 8, 2020'},
-                  {title:"Borderlands 3", date: 'Dec 24, 2019'},
-              ]
+            
         }
     },
     components: {
