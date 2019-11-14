@@ -1,5 +1,5 @@
 export default [
-    {title:"Untitled Goose Game", numberOfDays: 5},
-    {title:"Hollow Knight", numberOfDays: 12},
-    {title:"Modern Warfare", numberOfDays: 24},
+    {id: 0, title:"01. This should stay", numberOfDays: 5},
+    {id: 1, title:"02. This should stay", numberOfDays: 12},
+    {id: 2, title:"03. DELETE ME", numberOfDays: 24},
 ];

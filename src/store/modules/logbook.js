@@ -1,4 +1,5 @@
 import games from '../../data/loggedGames';
+import activity from '../../data/activity';
 
 const state =  {
     games: []

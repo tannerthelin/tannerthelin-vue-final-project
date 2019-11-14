@@ -2,8 +2,10 @@
     <div class="flex-grow">
         <h3>Currently playing</h3>
         <div class="list-container">
+
             <current-game v-for="game in games" :game="game" :key="game.id"></current-game>
-                <button class="add-button" v-on:click="addSelected = !addSelected"><i class="fa fa-plus-square-o"></i>Add new</button>                
+            
+            <button class="add-button" v-on:click="addSelected = !addSelected"><i class="fa fa-plus-square-o"></i>Add new</button>                
             <input type="text" class="new-input" placeholder="Search for game..." v-show="addSelected">            
         </div>
     </div>
@@ -20,7 +22,12 @@ export default {
     },
     data () {
         return {
-            addSelected: false
+            addSelected: false,
+            // games: [
+            //     {id: 1, title:"Untitled Goose Game", numberOfDays: 5},
+            //     {id: 2, title:"Hollow Knight", numberOfDays: 12},
+            //     {id: 3, title:"Modern Warfare", numberOfDays: 24},
+            // ]
         };
     },
     components: {
