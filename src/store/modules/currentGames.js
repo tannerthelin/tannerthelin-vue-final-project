@@ -22,13 +22,14 @@ const mutations = {
     },
     'DELETE_GAME': (state, payload) => {
         // var index = state.games.find(game => game.id == payload);
-        // var index = state.games.find(game => game.id === payload);
+        var index = state.games.find(game => game.id === payload);
         // let index = state.games.map(game => game.id).indexOf(payload.id);
-        for (state.games) {
-            if (games.id === payload) {
-                state.games.splice(games, 1)
-            }
-        }
+        // for (i = 0; i < cars.length; i++) {
+        //     if (games.id === payload) {
+                
+        //     }
+        // }
+        state.games.splice(games, 1)
     }
 };
 
