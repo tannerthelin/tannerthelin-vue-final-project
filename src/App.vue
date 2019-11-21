@@ -7,7 +7,7 @@
         <activity-list></activity-list>
       </div>
       <logbook-list></logbook-list>
-      <p>API Data: {{info.data.results[1].name}}</p>
+      <!-- <p>API Data: {{info.data.results[1].name}}</p> -->
     </div>
   </div>
 </template>
@@ -34,15 +34,11 @@ export default {
       apikey: 'e8167be1f1aad46ac527f7acadbf16993a8d2008'
     }
   },
-  mounted () {
-    axios
-      .get('https://api.rawg.io/api/games')
-      .then(response => (this.info = response))
-  },
-  created() {
-    this.$store.dispatch('initGames');
-    this.$store.dispatch('initLoggedGames');
-    this.$store.dispatch('initActivity');
+  created () {
+    // axios
+    //   .get('https://api.rawg.io/api/games')
+    //   .then(response => (this.info = response))
+    console.log(this.$store.state.currentGames);
   }
 }
 </script>

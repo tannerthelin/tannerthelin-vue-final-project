@@ -10,32 +10,21 @@
             </div>
             <div class="current-actions">
                 <div class="complete-button"></div>
-                <div class="trash-button" @click="deleteGame(game)"></div>
+                <div class="trash-button"></div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import { VTooltip, VPopover, VClosePopover } from 'v-tooltip';
     import {mapActions} from 'vuex';
 
     export default {
-        computed: {
-            // games() {
-            //     return this.$store.getters.games;
-            // }
-        },
         props: ['game'],
-        directives: {
-            'tooltip': VTooltip,
-            'close-popover': VClosePopover,
-            'v-popover': VPopover
-        },
         methods: {
-            deleteGame: function(game) {
-                this.$store.dispatch("deleteGame", game.id);
-            }
+            // deleteGame: function(game) {
+            //     $store.splice(game.id, 1);
+            // }
         }
     }
 </script>

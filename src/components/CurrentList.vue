@@ -3,7 +3,7 @@
         <h3>Currently playing</h3>
         <div class="list-container">
 
-            <current-game v-for="game in games" :game="game" :key="game.id"></current-game>
+            <current-game v-for="game in currentGames" :key="game.title" :game="game"></current-game>
             
             <button class="add-button" v-on:click="addSelected = !addSelected"><i class="fa fa-plus-square-o"></i>Add new</button>                
             <input type="text" class="new-input" placeholder="Search for game..." v-show="addSelected">            
@@ -13,26 +13,28 @@
 
 <script>
 import CurrentGame from './CurrentGame.vue';
+// import { getCurves } from 'crypto';
 
 export default {
     computed: {
-        games() {
-            return this.$store.getters.games;
+        getCurrent() {
+            return this.$store.state.currentGames;
         }
     },
     data () {
         return {
             addSelected: false,
-            // games: [
-            //     {id: 1, title:"Untitled Goose Game", numberOfDays: 5},
-            //     {id: 2, title:"Hollow Knight", numberOfDays: 12},
-            //     {id: 3, title:"Modern Warfare", numberOfDays: 24},
-            // ]
+            currentGames: this.$store.state.currentGames,
         };
     },
     components: {
         currentGame: CurrentGame
     },
+    // methods: {
+    //     currentGames () {
+    //         this.array = getCurrent();
+    //     },
+    // }
 }
 </script>
 
