@@ -13,7 +13,6 @@
 
 <script>
 import CurrentGame from './CurrentGame.vue';
-// import { getCurves } from 'crypto';
 
 export default {
     computed: {
@@ -30,20 +29,10 @@ export default {
     components: {
         currentGame: CurrentGame
     },
-    // methods: {
-    //     currentGames () {
-    //         this.array = getCurrent();
-    //     },
-    // }
 }
 </script>
 
 <style>
-    /* .new-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    } */
 
     .add-button {
         box-shadow: none;

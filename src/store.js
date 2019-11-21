@@ -31,38 +31,9 @@ export default new Vuex.Store({
             address: ''
         }
     },
-//   mutations: {
-//     storeUser (state, user) {
-//       return (state.user = user)
-//     }
-//   },
-//   actions: {
-//     orderSubmitted ({ commit }, user) {
-//       commit('storeUser', user)
-//       router.replace('/confirmation')
-//     }
-//   },
   getters: {
     getCurrent: state => {return state.currentGames},
     getLogged: state => {return state.loggedGames},
     getActivity: state => {return state.activity},
   }
 });
-
-
-// import Vue from 'vue';
-// import Vuex from 'vuex';
-
-// import currentGames from './modules/currentGames';
-// import loggedGames from './modules/logbook';
-// import activity from './modules/activity';
-
-// Vue.use(Vuex);
-
-// export default new Vuex.Store({
-//     modules: {
-//         currentGames,
-//         loggedGames,
-//         activity
-//     }
-// });
