@@ -10,7 +10,7 @@
             </div>
             <div class="current-actions">
                 <div class="complete-button"></div>
-                <div class="trash-button"></div>
+                <div class="trash-button" @click="deleteGame"></div>
             </div>
         </div>
     </div>
@@ -22,9 +22,11 @@
     export default {
         props: ['game'],
         methods: {
-            // deleteGame: function(game) {
-            //     $store.splice(game.id, 1);
-            // }
+            deleteGame: function() {
+                let removed = this.game;
+                let index = this.$store.state.currentGames.indexOf(removed);
+                this.$store.state.currentGames.splice(index, 1);
+            }
         }
     }
 </script>
