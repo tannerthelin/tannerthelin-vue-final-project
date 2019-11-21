@@ -20,11 +20,7 @@ export default new Vuex.Store({
             {id: 7, title:"Link's Awaken...", finished: 'Nov 1, 2019', rating: 5},
             {id: 8, title:"Borderlands 3", finished: 'Oct 23, 2019', rating: 3}
         ],
-        activity: [
-            "Deleted 'Breath of the Wild' from your Currently Playing", 
-            "Added 'Untitled Goose Game' to your Currently Playing",
-            "Added 'Hollow Knight' to your Currently Playing"
-        ],
+        activity: [],
         user: {
             name: '',
             email: '',

@@ -2,7 +2,7 @@
     <div class="flex-grow">
         <h3>Activity</h3>
         <div class="list-container">
-            <p class="activity-log" v-for="log in loggedActivity" :log="log" :key="log.id">{{log}}</p>
+            <p class="activity-log" v-for="log in activityLog" :log="log" :key="log.id">{{log}}</p>
         </div>
     </div>
 </template>
@@ -10,13 +10,13 @@
 <script>
 export default {
     computed: {
-        loggedActivity() {
-            return this.$store.getters.loggedActivity;
+        getActivity() {
+            return this.$store.state.activity;
         }
     },
     data() {
         return {
-            // activityLog: ["Deleted 'Breath of the Wild' from your Currently Playing", "Added 'Untitled Goose Game' to your Currently Playing"]
+            activityLog: this.$store.state.activity
         }
     }
 }

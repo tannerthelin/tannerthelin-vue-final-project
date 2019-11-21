@@ -26,6 +26,7 @@
                 let removed = this.game;
                 let index = this.$store.state.currentGames.indexOf(removed);
                 this.$store.state.currentGames.splice(index, 1);
+                this.$store.state.activity.push("You deleted " + removed.title + " from your Currently Playing.");
             }
         }
     }
