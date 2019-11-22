@@ -44,7 +44,8 @@ export default new Vuex.Store({
 
             // Convert date to simpler format
             var month = date.toLocaleString("en-US", { month: 'short' });
-            var currentDate = date.getDate() + ' ' + month + ' ' + date.getFullYear();
+            // var currentDate = date.getDate() + ' ' + month + ' ' + date.getFullYear();
+            var currentDate =  month + ' ' + date.getDate() + 'a ' + date.getFullYear();
 
             // Set date
             payload.finished = currentDate;

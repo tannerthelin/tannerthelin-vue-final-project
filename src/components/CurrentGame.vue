@@ -27,30 +27,6 @@
             },
             completeGame(game) {
                 this.$store.dispatch("completeGame", game);
-            },
-            completeGame: function() {
-                let completed = this.game;
-                let index = this.$store.state.currentGames.indexOf(completed);
-
-                // Remove game from the "Current" list
-                this.$store.state.currentGames.splice(index, 1);
-                
-                // Get current date
-                var date = new Date();
-
-                // Convert date to simpler format
-                var month = date.toLocaleString("en-US", { month: 'short' });
-                var currentDate = date.getDate() + ' ' + month + ' ' + date.getFullYear();
-
-                // Set date
-                completed.finished = currentDate;
-
-                // Add game to the logbook
-                this.$store.state.loggedGames.unshift(completed);
-
-                // Push the event to the Activity log
-                this.$store.state.activity.push("You marked " + completed.title + " as completed.");
-
             }
         }
     }
