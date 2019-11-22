@@ -9,8 +9,8 @@
                 </div>
             </div>
             <div class="current-actions">
-                <div class="complete-button" @click="completeGame"></div>
-                <div class="trash-button" @click="deleteGame"></div>
+                <div class="complete-button" @click="completeGame(game)"></div>
+                <div class="trash-button" @click="deleteGame(game)"></div>
             </div>
         </div>
     </div>
@@ -22,15 +22,11 @@
     export default {
         props: ['game'],
         methods: {
-            deleteGame: function() {
-                let removed = this.game;
-                let index = this.$store.state.currentGames.indexOf(removed);
-                this.$store.state.currentGames.splice(index, 1);
-                this.$store.state.activity.push("You deleted " + removed.title + " from your Currently Playing.");
+            deleteGame(game) {
+                this.$store.dispatch("deleteGame", game);
             },
-           format: function(date) {
-                var month = date.toLocaleString("en-US", { month: 'short' })
-                return date.getDate() + ' ' + month + ' ' + date.getFullYear();
+            completeGame(game) {
+                this.$store.dispatch("completeGame", game);
             },
             completeGame: function() {
                 let completed = this.game;
@@ -55,7 +51,6 @@
                 // Push the event to the Activity log
                 this.$store.state.activity.push("You marked " + completed.title + " as completed.");
 
-                console.log(completed);
             }
         }
     }

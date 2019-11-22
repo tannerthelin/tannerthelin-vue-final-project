@@ -2,7 +2,7 @@
     <div class="logbook-container">
     <h3>My logbook</h3>
         <div class="logbook">            
-            <logged-game v-for="game in logbook" :game="game" :key="game.id"></logged-game>
+            <logged-game v-for="game in loggedGames" :game="game" :key="game.id"></logged-game>
         </div>
     </div>
 </template>
@@ -15,12 +15,12 @@ import {HeartRating} from 'vue-rate-it';
 export default {
     computed: {
         loggedGames() {
-            return this.$store.state.loggedGames;
+          return this.$store.getters.getLogged;
         }
     },
     data () {
         return {
-            logbook: this.$store.state.loggedGames
+            
         }
     },
     components: {

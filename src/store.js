@@ -27,9 +27,46 @@ export default new Vuex.Store({
             address: ''
         }
     },
-  getters: {
-    getCurrent: state => {return state.currentGames},
-    getLogged: state => {return state.loggedGames},
-    getActivity: state => {return state.activity},
-  }
+    mutations: {
+        'DELETE_GAME' (state, payload) {
+            let index = state.currentGames.indexOf(payload);
+            state.currentGames.splice(index, 1);
+            state.activity.push("You deleted " + payload.title + " from your Currently Playing.");
+        },
+        'COMPLETE_GAME' (state, payload) {
+            let index = state.currentGames.indexOf(payload);
+
+            // Remove game from the "Current" list
+            state.currentGames.splice(index, 1);
+            
+            // Get current date
+            var date = new Date();
+
+            // Convert date to simpler format
+            var month = date.toLocaleString("en-US", { month: 'short' });
+            var currentDate = date.getDate() + ' ' + month + ' ' + date.getFullYear();
+
+            // Set date
+            payload.finished = currentDate;
+
+            // Add game to the logbook
+            state.loggedGames.unshift(payload);
+
+            // Push the event to the Activity log
+            state.activity.push("You marked " + completed.title + " as completed.");
+        }
+    },
+    actions: {
+        deleteGame(context, game) {
+            context.commit("DELETE_GAME", game);
+          },
+        completeGame(context, game) {
+            context.commit("COMPLETE_GAME", game);
+        }
+    },
+    getters: {
+        getCurrent: state => {return state.currentGames},
+        getLogged: state => {return state.loggedGames},
+        getActivity: state => {return state.activity},
+    }
 });

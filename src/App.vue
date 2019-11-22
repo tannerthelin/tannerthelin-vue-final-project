@@ -38,7 +38,6 @@ export default {
     // axios
     //   .get('https://api.rawg.io/api/games')
     //   .then(response => (this.info = response))
-    console.log(this.$store.state.currentGames);
   }
 }
 </script>
@@ -52,7 +51,7 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     background-color: #F9F9FA;
-    padding-bottom: 240px;
+    padding-bottom: 80px;
     min-height: 100vh;
     border: 15px solid white;
   }
