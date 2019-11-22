@@ -2,7 +2,7 @@
     <div class="main-container">
         <div class="image-container"></div>
         <h2>{{game.title}}</h2>
-        <h3>{{game.finished}}</h3>
+        <h3 placeholder= "Date here">{{game.finished}}</h3>
         <heart-rating 
             v-model="rating"
             :item-size="10"

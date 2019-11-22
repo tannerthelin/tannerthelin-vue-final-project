@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="current-actions">
-                <div class="complete-button"></div>
+                <div class="complete-button" @click="completeGame"></div>
                 <div class="trash-button" @click="deleteGame"></div>
             </div>
         </div>
@@ -27,6 +27,35 @@
                 let index = this.$store.state.currentGames.indexOf(removed);
                 this.$store.state.currentGames.splice(index, 1);
                 this.$store.state.activity.push("You deleted " + removed.title + " from your Currently Playing.");
+            },
+           format: function(date) {
+                var month = date.toLocaleString("en-US", { month: 'short' })
+                return date.getDate() + ' ' + month + ' ' + date.getFullYear();
+            },
+            completeGame: function() {
+                let completed = this.game;
+                let index = this.$store.state.currentGames.indexOf(completed);
+
+                // Remove game from the "Current" list
+                this.$store.state.currentGames.splice(index, 1);
+                
+                // Get current date
+                var date = new Date();
+
+                // Convert date to simpler format
+                var month = date.toLocaleString("en-US", { month: 'short' });
+                var currentDate = date.getDate() + ' ' + month + ' ' + date.getFullYear();
+
+                // Set date
+                completed.finished = currentDate;
+
+                // Add game to the logbook
+                this.$store.state.loggedGames.unshift(completed);
+
+                // Push the event to the Activity log
+                this.$store.state.activity.push("You marked " + completed.title + " as completed.");
+
+                console.log(completed);
             }
         }
     }

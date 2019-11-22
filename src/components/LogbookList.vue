@@ -31,7 +31,7 @@ export default {
 
 <style>
     .logbook-container {
-        margin-top: 80px;
+        margin-top: 20px;
         padding: 16px;
     }
 
