@@ -11,7 +11,7 @@
 export default {
     computed: {
         getActivity() {
-            return this.$store.state.activity;
+          return this.$store.getters.getActivity;
         }
     },
     data() {

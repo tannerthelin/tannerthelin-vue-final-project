@@ -54,7 +54,7 @@ export default new Vuex.Store({
             state.loggedGames.unshift(payload);
 
             // Push the event to the Activity log
-            state.activity.push("You marked " + completed.title + " as completed.");
+            state.activity.push("You marked " + payload.title + " as completed.");
         }
     },
     actions: {
