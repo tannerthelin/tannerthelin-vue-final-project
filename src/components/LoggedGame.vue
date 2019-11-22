@@ -4,7 +4,7 @@
         <h2>{{game.title}}</h2>
         <h3 placeholder= "Date here">{{game.finished}}</h3>
         <heart-rating 
-            v-model="rating"
+            v-model="game.rating"
             :item-size="10"
             inactive-color="#D8D8D9"
             active-color="#F56A72"
@@ -29,13 +29,13 @@ export default {
     },
     data() {
         return {
-            rating: this.game.rating
+            // rating: 1
         };
     },
     watch: {
         rating: {}
     },
-    props: ['game'],
+    props: ['game', 'rating'],
 }
 </script>
 
