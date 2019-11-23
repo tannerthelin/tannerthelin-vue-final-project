@@ -2,12 +2,7 @@
   <div id="app">
     <app-header></app-header>
     <div class="content-container">
-      <div class="top-container">
-        <current-list></current-list>
-        <activity-list></activity-list>
-      </div>
-      <logbook-list></logbook-list>
-      <!-- <p>API Data: {{info.data.results[1].name}}</p> -->
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -80,68 +75,4 @@ export default {
     max-width: 960px;
     margin: auto;
   }
-
-  .top-container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .list-container {
-    height: 575px;
-    background-color: #F6F6F6;
-    border: 1px solid #E7E7E8;
-    border-radius: 4px;
-    padding: 16px;
-  }
-
-  .flex-grow {
-    width: 50%;
-    padding: 12px;
-  }
-
-  .menu-dots {
-        background-image: url("./assets/images/menu-dots.svg");
-        background-position: center;
-        width: 32px;
-        height: 32px;
-        background-repeat: no-repeat;
-        display: inline-block;
-        cursor: pointer;
-        z-index: 3;
-    }
-
-    .menu-dots:hover {
-        background-image: url("./assets/images/menu-dots-black.svg");
-    }
-
-    .small {
-      width: 16px;
-      height: 40px;
-      background-size: contain;
-      display: block;
-    }
-
-    @import url('./assets/extra-styles/tooltip-styles.css');
-    /* .tooltip {
-        display: block !important;
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
-        z-index: 10000;
-    }
-
-    .tooltip .tooltip-inner {
-        background: rgba(0, 0, 0, .5);
-        color: white;
-        border-radius: 16px;
-        padding: 5px 10px 4px;
-    }
-
-    .tooltip .tooltip-arrow {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      position: absolute;
-      margin: 5px;
-      border-color: black;
-    } */
 </style>

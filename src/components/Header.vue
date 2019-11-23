@@ -4,11 +4,11 @@
             <img alt="Computer Logo" src="../assets/images/logo.png" style="width: 62px">
         </div>
         <div class="menu-dots" v-on:click="isHidden = !isHidden"></div>
-        <div class="main-nav" v-if= "!isHidden">
+        <div class="main-nav" v-if="isHidden === false">
             <div class="main-nav-content">
-                <a href="#">About</a>
-                <a href="#">Join</a>
-                <a href="#">Sign In</a>
+                <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'home'}">About</router-link>
+                <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'dashboard'}">Dashboard</router-link>
+                <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'sign-in'}">Sign In</router-link>
             </div>
         </div>
     </div>
@@ -20,11 +20,31 @@ export default {
         return {
             isHidden: true
         }        
+    },
+    methods: {
+        closeDropdown(isHidden) {
+            this.isHidden = true;
+        }
     }
 }
 </script>
 
 <style scoped>
+
+    .menu-dots {
+        background-image: url("../assets/images/menu-dots.svg");
+        background-position: center;
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .menu-dots:hover {
+        background-image: url("../assets/images/menu-dots-black.svg");
+    }
 
     .header-container {
         display: flex;
@@ -58,6 +78,7 @@ export default {
         padding: 8px 0 8px 12px;
         text-decoration: none;
         border-radius: 4px;
+        cursor: pointer;
     }
 
     .main-nav-content a:hover {
