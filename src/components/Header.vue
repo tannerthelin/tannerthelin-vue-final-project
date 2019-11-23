@@ -1,8 +1,8 @@
 <template>
     <div class="header-container">
-        <div class="logo-container">
+        <router-link class="logo-container" :to="{ name: 'home'}">
             <img alt="Computer Logo" src="../assets/images/logo.png" style="width: 62px">
-        </div>
+        </router-link>
         <div class="menu-dots" v-on:click="isHidden = !isHidden"></div>
         <div class="main-nav" v-if="isHidden === false">
             <div class="main-nav-content">
