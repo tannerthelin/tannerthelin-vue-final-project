@@ -4,6 +4,7 @@
     <div class="content-container">
       <router-view></router-view>
     </div>
+    <app-footer></app-footer>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Header from './components/Header.vue';
 import CurrentList from './components/CurrentList.vue';
 import ActivityList from './components/ActivityList.vue';
 import LogbookList from './components/LogbookList.vue';
+import Footer from './components/Footer.vue';
 import {HeartRating} from 'vue-rate-it';
 
 export default {
@@ -21,7 +23,8 @@ export default {
     appHeader: Header,
     currentList: CurrentList,
     activityList: ActivityList,
-    logbookList: LogbookList
+    logbookList: LogbookList,
+    appFooter: Footer
   },
   data () {
     return {
@@ -46,7 +49,6 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     background-color: #F9F9FA;
-    padding-bottom: 80px;
     min-height: 100vh;
     border: 15px solid white;
   }
