@@ -51,6 +51,9 @@ export default {
     background-color: #F9F9FA;
     min-height: 100vh;
     border: 15px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   body, html {

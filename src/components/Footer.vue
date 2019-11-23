@@ -11,5 +11,6 @@
         line-height: 20px;
         color: #818181;
         padding: 30px;
+        margin: 0px;
     }
 </style>

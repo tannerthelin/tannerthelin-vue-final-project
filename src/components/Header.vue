@@ -6,7 +6,7 @@
         <div class="menu-dots" v-on:click="isHidden = !isHidden"></div>
         <div class="main-nav" v-if="isHidden === false">
             <div class="main-nav-content">
-                <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'home'}">About</router-link>
+                <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'home'}">Home</router-link>
                 <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'dashboard'}">Dashboard</router-link>
                 <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'sign-in'}">Sign In</router-link>
             </div>
