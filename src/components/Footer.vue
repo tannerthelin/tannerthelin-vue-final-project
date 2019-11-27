@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Made with ♥ in Utah. <br> All rights to their respective owners.</p>
+        <p>Made with ♥ in Utah. <br>Copyright Tanner Thelin, 2019</p>
     </div>
 </template>
 
