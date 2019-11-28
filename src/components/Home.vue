@@ -12,7 +12,7 @@
                 </router-link>
             </div>
         </div>
-        <img src="../assets/images/home-image.png" width="450px" height="439">
+        <img class="home-image" src="../assets/images/home-illustration.png" width="550px">
     </div>
 </template>
 
@@ -24,6 +24,12 @@
         display: flex;
         justify-content: space-between;
         align-content: center;
+        position: relative;
+    }
+
+    .home-image {
+        position: relative;
+        right: -70px;
     }
 
     h1 {
