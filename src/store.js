@@ -8,8 +8,8 @@ export default new Vuex.Store({
     state: {
         currentGames: [
             {id: 3328, numberOfDays: 5, rating: 0, bgImage: './assets/images/placeholder-small.png'},
-            {id: 17, numberOfDays: 12, rating: 0, bgImage: './assets/images/placeholder-small.png'},
-            {id: 1, numberOfDays: 24, rating: 0, bgImage: './assets/images/placeholder-small.png'},
+            {id: 41494, numberOfDays: 12, rating: 0, bgImage: './assets/images/placeholder-small.png'},
+            {id: 59637, numberOfDays: 24, rating: 0, bgImage: './assets/images/placeholder-small.png'},
             {id: 70, numberOfDays: 25, rating: 0, bgImage: './assets/images/placeholder-small.png'},
         ],
         loggedGames: [
