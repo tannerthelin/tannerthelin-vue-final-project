@@ -21,9 +21,9 @@ export default {
   name: 'app',
   components: {
     appHeader: Header,
-    currentList: CurrentList,
-    activityList: ActivityList,
-    logbookList: LogbookList,
+    // currentList: CurrentList,
+    // activityList: ActivityList,
+    // logbookList: LogbookList,
     appFooter: Footer
   },
   data () {
@@ -75,7 +75,7 @@ export default {
   }
 
   .content-container {
-    max-width: 960px;
+    width: 960px;
     margin: auto;
   }
 </style>

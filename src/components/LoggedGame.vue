@@ -1,6 +1,6 @@
 <template>
     <div class="main-container">
-        <div class="image-container"></div>
+        <div class="image-container" v-bind:style="{ backgroundImage: gameImage }"></div>
         <h2>{{game.title}}</h2>
         <h3 placeholder= "Date here">{{game.finished}}</h3>
         <heart-rating 
@@ -16,27 +16,34 @@
 </template>
 
 <script>
-import {HeartRating} from 'vue-rate-it';
+    import {HeartRating} from 'vue-rate-it'
+    import axios from 'axios'
 
-export default {
-    computed: {
-        loggedGames() {
-          return this.$store.getters.getLogged;
+    export default {
+        props: ['game', 'rating'],
+        data () {
+            return {
+                id: '',
+                gameImage: 'url(' + this.game.bgImage + ')',
+            }
+        },
+        methods: {
+            modifyGame(game) {
+                this.$store.dispatch("modifyGame", game);
+            }
+        },
+        created() {
+            this.$store.dispatch("modifyGame", this.game);
+        },
+        watch: {
+            getLogged() {
+                return this.$store.state.loggedGames;
+            }
+        },
+        components: {
+            HeartRating
         }
-    },
-    components: {
-        HeartRating
-    },
-    data() {
-        return {
-            // rating: 1
-        };
-    },
-    watch: {
-        rating: {}
-    },
-    props: ['game', 'rating'],
-}
+    }
 </script>
 
 <style scoped>
@@ -51,7 +58,8 @@ export default {
         background-image: url('../assets/images/placeholder-large.png');
         width: 100%;
         height: 170px;
-        background-size: contain;
+        background-size: cover;
+        background-position: center;
         border-radius: 4px;
         box-shadow: 0px 11px 14px 0px rgba(0,0,0,0.05);
         margin-bottom: 12px

@@ -24,7 +24,7 @@ export default {
         return {
             addSelected: false,
             currentGames: this.$store.state.currentGames,
-        };
+        }
     },
     components: {
         currentGame: CurrentGame

@@ -14,13 +14,13 @@ import {HeartRating} from 'vue-rate-it';
 
 export default {
     computed: {
-        loggedGames() {
-          return this.$store.getters.getLogged;
+        getLogged() {
+          return this.$store.state.loggedGames;
         }
     },
     data () {
         return {
-            
+            loggedGames: this.$store.state.loggedGames,
         }
     },
     components: {

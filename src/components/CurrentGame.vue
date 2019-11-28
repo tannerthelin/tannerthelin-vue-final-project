@@ -26,7 +26,6 @@
 <script>
     import {mapActions} from 'vuex'
     import axios from 'axios'
-    import currentImage from './CurrentImage'
 
     export default {
         props: ['game'],
@@ -35,7 +34,6 @@
                 id: '',
                 // gameImage: this.game.bgImage,
                 gameImage: 'url(' + this.game.bgImage + ')',
-                activeColor: 'red',
             }
         },
         methods: {
@@ -49,14 +47,14 @@
                 this.$store.dispatch("modifyGame", game);
             }
         },
-        mounted() {
+        created() {
             this.$store.dispatch("modifyGame", this.game);
         },
         watch: {
             getCurrent() {
                 return this.$store.state.currentGames;
             }
-    },
+        },
     }
 </script>
 
@@ -90,7 +88,7 @@
         width: 42px;
         height: 42px;
         background-image: url('../assets/images/placeholder-small.png');
-        background-color: lightslategray;
+        background-color: white;
         display: inline-block;
         background-size: cover;
         background-repeat: no-repeat;
