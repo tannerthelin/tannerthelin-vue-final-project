@@ -16,7 +16,7 @@ export default {
     computed: {
         getLogged() {
           return this.$store.state.loggedGames;
-        }
+        },
     },
     data () {
         return {

@@ -65,7 +65,12 @@
         border-radius: 4px;
         box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.05);
         margin-bottom: 12px;
+        transition: 0.2s ease;
 
+    }
+
+    .current-container:hover {
+        box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.05);
     }
 
     .current-container:hover .current-actions{

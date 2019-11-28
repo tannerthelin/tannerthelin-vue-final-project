@@ -1,7 +1,7 @@
 <template>
     <div class="main-container">
         <div class="image-container" v-bind:style="{ backgroundImage: gameImage }"></div>
-        <h2>{{game.shortTitle}}</h2>
+        <h2 class="game-title">{{game.shortTitle}}</h2>
         <h3 placeholder= "Date here">{{game.finished}}</h3>
         <heart-rating 
             v-model="game.rating"
@@ -35,15 +35,22 @@
         },
         created() {
             this.$store.dispatch("modifyGame", this.game);
-            return this.$store.getters.loggedGames;
+            return this.$store.getters.loggedGames;            
         },
         watch: {
             getLogged() {
                 return this.$store.state.loggedGames;
-            }
+            }            
         },
         components: {
             HeartRating
+        },
+        computed: {
+            checkRating() {
+                if (this.game.rating < 1) {
+                    console.log('Rate me!');
+                }
+            }
         }
     }
 </script>
@@ -75,5 +82,9 @@
 
     h2 {
         font-weight: 500;
+    }
+
+    .game-title {
+        white-space: nowrap;
     }
 </style>

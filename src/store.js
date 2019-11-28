@@ -20,9 +20,9 @@ function textEllipsis(str, maxLength, { side = "end", ellipsis = "..." } = {}) {
 export default new Vuex.Store({
     state: {
         currentGames: [
-            {id: 3328, title:'Loading_001', numberOfDays: 5, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
+            {id: 274762, title:'Loading_001', numberOfDays: 5, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
             {id: 41494, title:'Loading_002', numberOfDays: 12, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
-            {id: 59637, title:'Loading_003', numberOfDays: 24, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
+            {id: 257201, title:'Loading_003', numberOfDays: 24, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
         ],
         loggedGames: [
             {id: 9767, title:'Loading_001', finished: 'Nov 29, 2019', rating: 4, bgImage: 'url(./assets/images/placeholder-large.png)'},
