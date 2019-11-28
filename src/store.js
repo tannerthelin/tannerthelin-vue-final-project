@@ -4,6 +4,19 @@ import axios from 'axios'
 // import router from './router'
 Vue.use(Vuex)
 
+function textEllipsis(str, maxLength, { side = "end", ellipsis = "..." } = {}) {
+    if (str.length > maxLength) {
+      switch (side) {
+        case "start":
+          return ellipsis + str.slice(-(maxLength - ellipsis.length));
+        case "end":
+        default:
+          return str.slice(0, maxLength - ellipsis.length) + ellipsis;
+      }
+    }
+    return str;
+  }
+
 export default new Vuex.Store({
     state: {
         currentGames: [
@@ -65,15 +78,17 @@ export default new Vuex.Store({
         },
         'MODIFY_GAME' (state, payload) {
             let oldTitle = payload.bgImage;
-            var newTitle = '';
+            var fullTitle = '';
+            var shortTitle = '';
             var newImage = '';
             axios
             .get('https://api.rawg.io/api/games/' + payload.id)
             .then(response => {
-                newTitle = response.data.name;
-                payload.title = newTitle;                 
+                fullTitle = response.data.name;
+                shortTitle = textEllipsis(response.data.name, 16);
+                payload.title = fullTitle;
+                payload.shortTitle = shortTitle;          
                 newImage = response.data.background_image;
-                console.log(oldTitle + " changed to "+ newImage + ".");     
                 payload.bgImage = newImage;
             })
             .catch(error => {

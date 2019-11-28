@@ -1,7 +1,7 @@
 <template>
     <div class="main-container">
         <div class="image-container" v-bind:style="{ backgroundImage: gameImage }"></div>
-        <h2>{{game.title}}</h2>
+        <h2>{{game.shortTitle}}</h2>
         <h3 placeholder= "Date here">{{game.finished}}</h3>
         <heart-rating 
             v-model="game.rating"
