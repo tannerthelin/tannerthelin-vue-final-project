@@ -31,6 +31,11 @@
         position: relative;
         right: -70px;
     }
+    
+    .home-content {
+        position: relative;
+        left: -30px;
+    }
 
     h1 {
         font-size: 37px;
@@ -70,6 +75,21 @@
     .button-secondary:hover {
         background-color: #F3F3F3;
         border: 1px solid #D6D6D6;
+    }
+
+    @media (max-width: 1090px) {
+        .home-content {
+            left: 0px;
+        }
+
+        .home-image {
+            right: 0px;
+        }
+        
+        .home-container {
+            flex-direction: column;
+            padding-top: 50px;
+        }
     }
 
 </style>
