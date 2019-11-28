@@ -8,7 +8,7 @@
             <div class="main-nav-content">
                 <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'home'}">Home</router-link>
                 <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'dashboard'}">Dashboard</router-link>
-                <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'sign-in'}">Sign In</router-link>
+                <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'sign-in'}">Sign Up</router-link>
             </div>
         </div>
     </div>
