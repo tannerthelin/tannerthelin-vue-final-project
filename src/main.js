@@ -10,7 +10,7 @@ Vue.prototype.$http = axios
 new Vue({
   render: h => h(App),
   store,
-  router
+  router,
 }).$mount('#app');
 
 // console.log(store.state.currentGames);

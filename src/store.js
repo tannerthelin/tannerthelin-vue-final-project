@@ -1,14 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 // import router from './router'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
         currentGames: [
-            {title:"Untitled Goose Game", numberOfDays: 5, rating: 0},
-            {title:"Hollow Knight", numberOfDays: 12, rating: 0},
-            {title:"Modern Warfare", numberOfDays: 24, rating: 0},
+            {id: 3328, numberOfDays: 5, rating: 0, bgImage: './assets/images/placeholder-small.png'},
+            {id: 17, numberOfDays: 12, rating: 0, bgImage: './assets/images/placeholder-small.png'},
+            {id: 1, numberOfDays: 24, rating: 0, bgImage: './assets/images/placeholder-small.png'},
+            {id: 70, numberOfDays: 25, rating: 0, bgImage: './assets/images/placeholder-small.png'},
         ],
         loggedGames: [
             {title:"Untitled Goos...", finished: 'Jan 8, 2020', rating: 3},
@@ -55,6 +57,24 @@ export default new Vuex.Store({
 
             // Push the event to the Activity log
             state.activity.push("You marked " + payload.title + " as completed.");
+        },
+        'MODIFY_GAME' (state, payload) {
+            let index = state.currentGames.indexOf(payload);
+            let oldTitle = state.currentGames[index].title;
+            var newTitle = '';
+            axios
+            .get('https://api.rawg.io/api/games/' + payload.id)
+            .then(response => {
+                newTitle = response.data.name;
+                state.currentGames[index].bgImage = response.data.background_image; 
+                state.currentGames[index].title = newTitle; 
+                console.log(oldTitle + " changed to "+ newTitle + ".");     
+            })
+            .catch(error => {
+                console.log(error)
+            });
+
+            return payload;                
         }
     },
     actions: {
@@ -63,10 +83,15 @@ export default new Vuex.Store({
           },
         completeGame(context, game) {
             context.commit("COMPLETE_GAME", game);
+        },
+        modifyGame(context, game) {
+            context.commit('MODIFY_GAME', game);
         }
     },
     getters: {
-        getCurrent: state => {return state.currentGames},
+        getCurrent: state => {
+            return state.currentGames
+        },
         getLogged: state => {return state.loggedGames},
         getActivity: state => {return state.activity},
     }

@@ -33,9 +33,7 @@ export default {
     }
   },
   created () {
-    // axios
-    //   .get('https://api.rawg.io/api/games')
-    //   .then(response => (this.info = response))
+    // this.$store.dispatch("modifyGame", this.game);
   }
 }
 </script>

@@ -2,10 +2,17 @@
     <div class="current-container">
         <div class="current-content">
             <div class="left-content">
-                <div class="image-container"></div>
+                <!-- <div class="image-container" v-bind:style="{ backgroundImage: 'url(' + image + ')' }"></div> -->
+                <!-- <div class="image-container" v-bind:style="{ 'background-image': 'url(' + game.bgImage + ')' }"></div> -->
+                <!-- <div class="image-container" :style="{ backgroundImage: `url('${image}');` }"></div> -->
+
+                <!-- <current-image class="image-container"></current-image> -->
+                <div class="image-container" v-bind:style="{ backgroundImage: gameImage }"></div>
+
                 <div class="text-container">
                     <h2>{{ game.title }}</h2>
                     <h3>Been playing for {{ game.numberOfDays }} days</h3>
+                    <!-- <img src="../assets/images/placeholder-small.png" alt=""> -->
                 </div>
             </div>
             <div class="current-actions">
@@ -17,18 +24,39 @@
 </template>
 
 <script>
-    import {mapActions} from 'vuex';
+    import {mapActions} from 'vuex'
+    import axios from 'axios'
+    import currentImage from './CurrentImage'
 
     export default {
         props: ['game'],
+        data () {
+            return {
+                id: '',
+                // gameImage: this.game.bgImage,
+                gameImage: 'url(' + this.game.bgImage + ')',
+                activeColor: 'red',
+            }
+        },
         methods: {
             deleteGame(game) {
                 this.$store.dispatch("deleteGame", game);
             },
             completeGame(game) {
                 this.$store.dispatch("completeGame", game);
+            },
+            modifyGame(game) {
+                this.$store.dispatch("modifyGame", game);
             }
-        }
+        },
+        mounted() {
+            this.$store.dispatch("modifyGame", this.game);
+        },
+        watch: {
+            getCurrent() {
+                return this.$store.state.currentGames;
+            }
+    },
     }
 </script>
 
@@ -62,9 +90,11 @@
         width: 42px;
         height: 42px;
         background-image: url('../assets/images/placeholder-small.png');
+        background-color: lightslategray;
         display: inline-block;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
+        background-position: center;
     }
 
     .left-content {
@@ -119,6 +149,16 @@
 
     .trash-button:hover {
         background-image: url('../assets/images/icon-trash-hover.png');
+    }
+
+    .change-button {
+        width: 33px;
+        background-position: center;
+        background-image: url('../assets/images/icon-trash.png');
+        background-size: contain;
+        display: block;
+        background-repeat: no-repeat;
+        cursor: pointer;
     }
 
     
