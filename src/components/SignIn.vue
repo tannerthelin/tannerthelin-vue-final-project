@@ -79,14 +79,16 @@
         padding-top: 50px;
         padding-bottom: 120px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-content: center;
-        position: relative;
+        z-index: 1;
+        /* position: relative; */
     }
 
     .main-image {
         margin-right: 50px;
         margin-top: 80px;
+        z-index: 1;
     }
 
     .sign-in-container {
@@ -101,6 +103,8 @@
         border: 1px solid rgba(10,10,10,0.1);
         padding: 35px 35px;
         border-radius: 8px;
+        background-color: #F9F9FA;
+        z-index: 2;
     }
 
     .text-input {
@@ -180,6 +184,25 @@
     }
 
     @media (max-width: 800px) {
+        .main-image {
+            position: absolute;
+            top: 50px;
+            right: -60px;
+            z-index: 3;
+        }
+
+        .sign-in-container{
+            z-index: 2;
+        }
+
+        .home-container {
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+    }
+
+    @media (max-width: 550px) {
         .main-image {
             display: none;
         }

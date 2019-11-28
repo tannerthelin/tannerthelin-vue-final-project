@@ -63,4 +63,8 @@ export default {
       background-size: contain;
       display: block;
     }
+
+    logbook-list {
+      width: 960px;
+    }
 </style>

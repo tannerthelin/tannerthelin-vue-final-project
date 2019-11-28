@@ -49,7 +49,7 @@
             checkRating() {
                 if (this.game.rating < 1) {
                     console.log('Rate me!');
-                }
+                };
             }
         }
     }

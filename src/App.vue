@@ -75,7 +75,7 @@ export default {
   }
 
   .content-container {
-    width: 960px;
+    max-width: 960px;
     margin: auto;
   }
 </style>
