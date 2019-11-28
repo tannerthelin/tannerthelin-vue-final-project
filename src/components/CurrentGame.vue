@@ -2,17 +2,12 @@
     <div class="current-container">
         <div class="current-content">
             <div class="left-content">
-                <!-- <div class="image-container" v-bind:style="{ backgroundImage: 'url(' + image + ')' }"></div> -->
-                <!-- <div class="image-container" v-bind:style="{ 'background-image': 'url(' + game.bgImage + ')' }"></div> -->
-                <!-- <div class="image-container" :style="{ backgroundImage: `url('${image}');` }"></div> -->
 
-                <!-- <current-image class="image-container"></current-image> -->
                 <div class="image-container" v-bind:style="{ backgroundImage: gameImage }"></div>
 
                 <div class="text-container">
                     <h2>{{ game.title }}</h2>
                     <h3>Been playing for {{ game.numberOfDays }} days</h3>
-                    <!-- <img src="../assets/images/placeholder-small.png" alt=""> -->
                 </div>
             </div>
             <div class="current-actions">

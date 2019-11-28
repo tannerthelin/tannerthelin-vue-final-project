@@ -16,6 +16,7 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
     import {HeartRating} from 'vue-rate-it'
     import axios from 'axios'
 
@@ -34,6 +35,7 @@
         },
         created() {
             this.$store.dispatch("modifyGame", this.game);
+            return this.$store.getters.loggedGames;
         },
         watch: {
             getLogged() {

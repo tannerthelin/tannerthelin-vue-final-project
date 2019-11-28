@@ -2,7 +2,7 @@
     <div class="logbook-container">
     <h3>My logbook</h3>
         <div class="logbook">            
-            <logged-game v-for="game in loggedGames" :game="game" :key="game.id"></logged-game>
+            <logged-game v-for="game in loggedGames" :key="game.title" :game="game"></logged-game>
         </div>
     </div>
 </template>

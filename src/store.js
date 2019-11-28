@@ -7,13 +7,18 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         currentGames: [
-            {id: 3328, title:'Loading...', numberOfDays: 5, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
-            {id: 41494, title:'Loading...', numberOfDays: 12, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
-            {id: 59637, title:'Loading...', numberOfDays: 24, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
+            {id: 3328, title:'Loading_001', numberOfDays: 5, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
+            {id: 41494, title:'Loading_002', numberOfDays: 12, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
+            {id: 59637, title:'Loading_003', numberOfDays: 24, rating: 0, bgImage: 'url(./assets/images/placeholder-small.png)'},
         ],
         loggedGames: [
-            {id: 59637, title:'Loading...', finished: 'Jan 8, 2020', rating: 0, bgImage: 'url(./assets/images/placeholder-large.png)'},
-            {id: 41494, title:'Loading...', finished: 'Jan 8, 2020', rating: 0, bgImage: 'url(./assets/images/placeholder-large.png)'},
+            {id: 9767, title:'Loading_001', finished: 'Nov 29, 2019', rating: 4, bgImage: 'url(./assets/images/placeholder-large.png)'},
+            {id: 323065, title:'Loading_002', finished: 'Nov 25, 2019', rating: 3, bgImage: 'url(./assets/images/placeholder-large.png)'},
+            {id: 47137, title:'Loading_003', finished: 'Nov 20, 2019', rating: 1, bgImage: 'url(./assets/images/placeholder-large.png)'},
+            {id: 22121, title:'Loading_004', finished: 'Nov 14, 2019', rating: 2, bgImage: 'url(./assets/images/placeholder-large.png)'},
+            {id: 894, title:'Loading_005', finished: 'Nov 9, 2019', rating: 3, bgImage: 'url(./assets/images/placeholder-large.png)'},
+            {id: 22511, title:'Loading_006', finished: 'Nov 1, 2019', rating: 5, bgImage: 'url(./assets/images/placeholder-large.png)'},
+            {id: 58617, title:'Loading_007', finished: 'Oct 23, 2019', rating: 3, bgImage: 'url(./assets/images/placeholder-large.png)'},
             // {title:"Hollow Knight", finished: 'Jan 1, 2020', rating: 2},
             // {title:"Modern Warfare", finished: 'Dec 26, 2019', rating: 3},
             // {title:"Fortnite", finished: 'Nov 20, 2019', rating: 1},
@@ -59,15 +64,17 @@ export default new Vuex.Store({
             state.activity.push("You marked " + payload.title + " as completed.");
         },
         'MODIFY_GAME' (state, payload) {
-            let oldTitle = payload.title;
+            let oldTitle = payload.bgImage;
             var newTitle = '';
+            var newImage = '';
             axios
             .get('https://api.rawg.io/api/games/' + payload.id)
             .then(response => {
                 newTitle = response.data.name;
-                payload.bgImage = response.data.background_image;
-                payload.title = newTitle; 
-                console.log(oldTitle + " changed to "+ newTitle + ".");     
+                payload.title = newTitle;                 
+                newImage = response.data.background_image;
+                console.log(oldTitle + " changed to "+ newImage + ".");     
+                payload.bgImage = newImage;
             })
             .catch(error => {
                 console.log(error)
