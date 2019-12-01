@@ -5,14 +5,24 @@
 
             <current-game v-for="game in currentGames" :key="game.title" :game="game"></current-game>
             
-            <button class="add-button" v-on:click="addSelected = !addSelected"><i class="fa fa-plus-square-o"></i>Add new</button>                
-            <input type="text" class="new-input" placeholder="Search for game..." v-show="addSelected">            
+            <button class="add-button" v-on:click="addSelected = !addSelected"><i class="fa fa-plus-square-o"></i>Add new</button>     
+            <autocomplete
+                class="autocomplete-input"
+                source="https://api.rawg.io/api/games?search="
+                results-property="results"
+                input-class="autocomplete-input"
+                results-display="name"
+                placeholder="Search for game..."
+                v-show= "addSelected"
+                @selected= "submitSearch">
+            </autocomplete>           
         </div>
     </div>
 </template>
 
 <script>
 import CurrentGame from './CurrentGame.vue';
+import Autocomplete from 'vuejs-auto-complete';
 
 export default {
     computed: {
@@ -27,7 +37,26 @@ export default {
         }
     },
     components: {
-        currentGame: CurrentGame
+        currentGame: CurrentGame,
+        Autocomplete
+    },
+    methods: {
+        submitSearch(input) {
+            var searchObject = {
+                id: 1,
+                title: '',
+                numberOfDays: 0,
+                rating: 0,
+                bgImage: ''
+            }
+            searchObject.title = input.display;
+            searchObject.bgImage = input.selectedObject.background_image;
+            searchObject.id = input.value;
+            this.$store.state.currentGames.push(searchObject);
+            this.addSelected = false;
+            this.$store.state.activity.push('You added ' + searchObject.title + ' to your currently playing.');
+            this.clear();
+        }
     }
 }
 </script>
@@ -82,6 +111,24 @@ export default {
 
     .new-input:focus {
         outline: none;
+    }
+
+    .autocomplete {
+        max-width: 400px !important;
+        margin-top: 20px !important;
+        border-radius: 4px !important;
+    }
+
+    .autocomplete__box {
+        background-color: #F1F1F1 !important;
+        border: none !important;
+        padding-right: 16px !important;
+    }
+
+    .autocomplete-input {
+        background-color: #F1F1F1 !important;
+        padding: 12px 0px 12px 16px;
+        font-size: 16px;
     }
 
 </style>

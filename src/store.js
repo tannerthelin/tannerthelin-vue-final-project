@@ -87,7 +87,7 @@ export default new Vuex.Store({
                 fullTitle = response.data.name;
                 shortTitle = textEllipsis(response.data.name, 16);
                 payload.title = fullTitle;
-                payload.shortTitle = shortTitle;          
+                payload.shortTitle = shortTitle;
                 newImage = response.data.background_image;
                 payload.bgImage = newImage;
             })
