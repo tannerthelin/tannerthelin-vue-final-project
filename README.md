@@ -11,28 +11,48 @@ Link to final project: [www.closed-beta.com](http://www.closed-beta.com)
 <img src="src/assets/images/home-illustration-white.png" width="590">
 <br/>
 
-## Use conditional logic & JavaScript array methods to render large lists.
+## Use conditional logic & JavaScript array methods to render large lists
+On the "My Games" page, the SEARCH input field is conditionally rendered by using ```v-show``` and tying the ADD NEW button to a boolean variable. 
+Link to component: [CurrentList.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/CurrentList.vue)
+
+```
+// The button that toggles the variable
+<button v-on:click="addSelected = !addSelected"> Add new </button>  
+
+// The input field, using a component called 'Autocomplete'
+<autocomplete
+    class="autocomplete-input"
+    placeholder="Search for game..."
+    v-show = "addSelected"
+</autocomplete> 
+
+<script>
+    export default {
+        data () {
+            return {
+                addSelected: false
+            }
+        }
+    }
+</script>
+```
+
+## Encapsulate your code as VueJS single-file components
 
 
-## Encapsulate your code as VueJS single-file components.
+## Work with the Vue-CLI
 
 
-## Work with the Vue-CLI to create and manage your project within a real development toolset.
+## Allow communication between components using props, custom events, or local store
 
 
-## Properly use Git for your source version control with an established record of at least 4 days of commits each week from October 15th through December 6th.
+## Present a form for user input that provides useful form validation and feedback
 
 
-## Allow communication between components using props, custom events, or local store.
+## Create a custom directive and use it on at least one of your components
 
 
-## Present a form for user input that provides useful form validation and feedback.
-
-
-## Create a custom directive and use it on at least one of your components.
-
-
-## Use a mix of animations and transitions to enhance some aspects of your project.
+## Use a mix of animations and transitions to enhance some aspects of your project
 
 
 ## Connecting to a server: Axios
@@ -44,5 +64,5 @@ Link to final project: [www.closed-beta.com](http://www.closed-beta.com)
 ## Manage your application's state using vuex
 
 
-## Structure, document, and deploy your final project code according to common industry practices.
+## Deploy your final project code according to common industry practices
 
