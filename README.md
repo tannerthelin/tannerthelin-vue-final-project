@@ -1,13 +1,14 @@
-<img src="src/assets/images/logo.png" width="90">
-<!-- ![Logo](src/assets/images/logo.png)
-# Closed Beta: Track the games you're playing. -->
+<img src="src/assets/images/logo.png" width="80">
+<br/><br/>
+# Closed Beta: Track the games you're playing.
 
 This simple vue application pulls from the RAWG API to search through a list of video games. It allows the user to save the games they're currently playing, and then mark those games as complete and assign them a rating.
 
 Link to final project: [www.closed-beta.com](http://www.closed-beta.com)
 
-<img src="src/assets/images/home-illustration.png" width="590">
-<!-- ![Illustration](src/assets/images/home-illustration.png) -->
+<br/>
+<img src="src/assets/images/home-illustration-white.png" width="590">
+<br/>
 
 ## Use conditional logic & JavaScript array methods to render large lists.
 
