@@ -63,7 +63,10 @@ Three different routes are used to provide some basic navigation in this applica
 **Link to component:** [router.js](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/router.js)
 
 ```Vue
-routes: [
+export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes: [
     {
       path: '/',
       name: 'home',
@@ -84,6 +87,7 @@ routes: [
       component: Home
     }
   ]
+})
 ```
 
 
