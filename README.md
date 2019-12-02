@@ -15,7 +15,7 @@ Link to final project: [www.closed-beta.com](http://www.closed-beta.com)
 On the "My Games" page, the SEARCH input field is conditionally rendered by using ```v-show``` and tying the ADD NEW button to a boolean variable. 
 Link to component: [CurrentList.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/CurrentList.vue)
 
-```
+```vue
 // The button that toggles the variable
 <button v-on:click="addSelected = !addSelected"> Add new </button>  
 
