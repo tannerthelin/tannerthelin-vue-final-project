@@ -2,7 +2,7 @@
     <div class="logbook-container">
     <h3>My logbook</h3>
         <div class="logbook">            
-            <logged-game v-for="game in loggedGames" :key="game.title" :game="game"></logged-game>
+            <logged-game v-for="game in loggedGames" :key="game.title" :game="game" v-rateMe></logged-game>
         </div>
     </div>
 </template>
@@ -17,6 +17,17 @@ export default {
         getLogged() {
           return this.$store.state.loggedGames;
         },
+    },
+    directives: {
+        rateMe: {
+            // directive definition
+            bind: function (el, binding, vnode) {
+                if (vnode.componentInstance.game.rating === 0){
+                    vnode.componentInstance.ratingZero = true;
+                    // style.background = "red";
+                }                
+            }
+        }
     },
     data () {
         return {
