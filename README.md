@@ -16,10 +16,10 @@ On the "My Games" page, the SEARCH input field is conditionally rendered by usin
 Link to component: [CurrentList.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/CurrentList.vue)
 
 ```vue
-// The button that toggles the variable
-<button v-on:click="addSelected = !addSelected"> Add new </button>  
+<!-- The button that toggles the variable -->
+<button v-on:click= "addSelected = !addSelected"> Add new </button>  
 
-// The input field, using a component called 'Autocomplete'
+<!-- The input field, using a component called 'Autocomplete' -->
 <autocomplete
     class="autocomplete-input"
     placeholder="Search for game..."
