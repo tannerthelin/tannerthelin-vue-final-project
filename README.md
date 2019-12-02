@@ -2,7 +2,7 @@
 
 This simple vue application pulls from the RAWG API to search through a list of video games. It allows the user to save the games they're currently playing, and then mark those games as complete and assign them a rating.
 
-Link to final project: [www.closed-beta.com](www.closed-beta.com)
+Link to final project: [www.closed-beta.com](http://www.closed-beta.com)
 
 
 ## Use conditional logic & JavaScript array methods to render large lists.
