@@ -11,9 +11,9 @@ Link to final project: [www.closed-beta.com](http://www.closed-beta.com)
 <img src="src/assets/images/home-illustration-white.png" width="590">
 <br/>
 
-## Use conditional logic & JavaScript array methods to render large lists
-On the "My Games" page, the SEARCH input field is conditionally rendered by using ```v-show``` and tying the ADD NEW button to a boolean variable. 
-Link to component: [CurrentList.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/CurrentList.vue)
+## Use conditional logic & JavaScript array methods
+On the "My Games" page, the SEARCH input field is *conditionally rendered* by using ```v-show``` and tying the ADD NEW button to a boolean variable. 
+**Link to component:** [CurrentList.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/CurrentList.vue)
 
 ```vue
 <!-- The button that toggles the variable -->
@@ -59,6 +59,32 @@ Link to component: [CurrentList.vue](https://github.com/tannerthelin/tannertheli
 
 
 ## Provide at least 3 different routes using vue-router
+Three different routes are used to provide some basic navigation in this application. These routes are accessible via the "3-dot" navigation in the upper-righthand corner, as well as the buttons on the homepage. A *fallback* route is also implemented to direct random URLs to the homepage. 
+**Link to component:** [router.js](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/router.js)
+
+```Vue
+routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: Dashboard
+    },
+    {
+      path: '/sign-in',
+      name: 'sign-in',
+      component: SignIn
+    },
+    {
+      path: '*',
+      component: Home
+    }
+  ]
+```
 
 
 ## Manage your application's state using vuex
