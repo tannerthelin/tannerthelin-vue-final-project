@@ -1,5 +1,5 @@
-<img src="src/assets/images/logo.png" width="70">
-<br/><br/>
+<img src="src/assets/images/logo.png" width="60">
+<br/>
 
 # Closed Beta: Track the games you're playing.
 
