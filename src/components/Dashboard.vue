@@ -50,6 +50,7 @@ export default {
     border: 1px solid #E7E7E8;
     border-radius: 4px;
     padding: 16px;
+    overflow: scroll;
   }
 
   .flex-grow {

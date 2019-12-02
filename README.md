@@ -1,7 +1,5 @@
 # Closed Beta: Track the games you're playing.
 
---
-
 This simple vue application pulls from the RAWG API to search through a list of video games. It allows the user to save the games they're currently playing, and then mark those games as complete and assign them a rating.
 
 Link to final project: [www.closed-beta.com](www.closed-beta.com)
@@ -31,13 +29,13 @@ Link to final project: [www.closed-beta.com](www.closed-beta.com)
 ## Use a mix of animations and transitions to enhance some aspects of your project.
 
 
-## Connect to a server using HTTP and display retrieved data (use vue-resource or Axios).
+## Connecting to a server: Axios
 
 
-## Provide at least 3 different routes with navigation between them using vue-router.
+## Provide at least 3 different routes using vue-router
 
 
-## Manage your application's state using vuex.
+## Manage your application's state using vuex
 
 
 ## Structure, document, and deploy your final project code according to common industry practices.
