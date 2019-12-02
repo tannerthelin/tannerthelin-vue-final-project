@@ -1,5 +1,6 @@
-<img src="src/assets/images/logo.png" width="80">
+<img src="src/assets/images/logo.png" width="70">
 <br/><br/>
+
 # Closed Beta: Track the games you're playing.
 
 This simple vue application pulls from the RAWG API to search through a list of video games. It allows the user to save the games they're currently playing, and then mark those games as complete and assign them a rating.
