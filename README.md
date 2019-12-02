@@ -62,11 +62,8 @@ On the "My Games" page, the SEARCH input field is *conditionally rendered* by us
 Three different routes are used to provide some basic navigation in this application. These routes are accessible via the "3-dot" navigation in the upper-righthand corner, as well as the buttons on the homepage. A *fallback* route is also implemented to direct random URLs to the homepage. 
 **Link to component:** [router.js](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/router.js)
 
-```Vue
-export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
+```Javascript
+routes: [
     {
       path: '/',
       name: 'home',
@@ -87,7 +84,6 @@ export default new Router({
       component: Home
     }
   ]
-})
 ```
 
 
