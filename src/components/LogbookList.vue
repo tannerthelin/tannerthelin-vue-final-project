@@ -20,11 +20,11 @@ export default {
     },
     directives: {
         rateMe: {
-            // directive definition
             bind: function (el, binding, vnode) {
+                // Check if the rating is zero
                 if (vnode.componentInstance.game.rating === 0){
+                    // If it is, set the 'ratingZero' variable to true
                     vnode.componentInstance.ratingZero = true;
-                    // style.background = "red";
                 }                
             }
         }
