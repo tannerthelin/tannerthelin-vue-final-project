@@ -8,6 +8,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
+  hashbang: false,
   base: process.env.BASE_URL,
   routes: [
     {

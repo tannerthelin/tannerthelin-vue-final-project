@@ -42,7 +42,7 @@ On the "My Games" page, the SEARCH input field is *conditionally rendered* by us
 ## Work with the Vue-CLI
 
 
-## Allow communication between components using props, custom events, or local store
+## Communicating between components (props & local store)
 
 
 ## Present a form for user input that provides useful form validation and feedback
@@ -58,7 +58,7 @@ I use a custom directive (*on bind*) to check if the game's rating is ```0```. I
 <img src="src/assets/images/img-directive.png">
 
 
-## Use a mix of animations and transitions to enhance some aspects of your project
+## Using animations & transitions
 
 
 ## Connecting to a server: Axios
