@@ -48,12 +48,13 @@ On the "My Games" page, the SEARCH input field is *conditionally rendered* by us
 ## Present a form for user input that provides useful form validation and feedback
 
 
-## Create a custom directive and use it on at least one of your components
-I use a custom directive (*on bind*) to check if the game's rating is ```0```. If it is, I toggle a boolean variable within that game called ```ratingZero```, which adds an overlay and a tooltip prompting the user to rate the game.<br/>
+## Create & use a custom directive
+I use a custom directive (*on bind*) to check if the game's rating is ```0```. If it is, I toggle a boolean variable within that game called ```ratingZero```, which adds an overlay and a tooltip prompting the user to rate the game.
+<br/><br/>
 **Link to list component (with the directive):** [LogbookList.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/LogbookList.vue)
 <br/>
 **Link to child component (with variable):** [LoggedGame.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/LoggedGame.vue)
-<br/>
+<br/><br/>
 <img src="src/assets/images/img-directive.png">
 
 
