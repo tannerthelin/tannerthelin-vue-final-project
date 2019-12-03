@@ -13,13 +13,14 @@
         <h2 class="game-title">{{game.shortTitle}}</h2>
         <h3 placeholder= "Date here">{{game.finished}}</h3>
         <heart-rating 
-            v-model="game.rating"
+            v-model="myRating"
             :item-size="10"
             inactive-color="#D8D8D9"
             active-color="#F56A72"
             :increment="1"
             border-color="transparent"
             :show-rating="false"
+            @rating-selected="ratingChanged"
         ></heart-rating>
     </div>
 </template>
@@ -34,6 +35,7 @@
         data () {
             return {
                 id: '',
+                myRating: this.game.rating,
                 ratingZero: false,
                 gameImage: 'url(' + this.game.bgImage + ')',
             }
@@ -41,6 +43,15 @@
         methods: {
             modifyGame(game) {
                 this.$store.dispatch("modifyGame", game);
+            },
+            updateRating(i) {
+                this.game.rating = i;
+                this.$store.dispatch("modifyGame", game);
+            },
+            ratingChanged() {
+                this.game.rating = this.myRating;
+                this.ratingZero = false;
+                this.$store.dispatch("modifyGame", this.game);
             }
         },
         created() {
@@ -50,10 +61,7 @@
         watch: {
             getLogged() {
                 return this.$store.state.loggedGames;
-            },         
-            ratingChanged() {
-                return this.$store.state.loggedGames;
-            }
+            }                   
         },
         components: {
             HeartRating
