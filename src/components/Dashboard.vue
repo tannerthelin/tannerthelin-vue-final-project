@@ -1,9 +1,11 @@
 <template>
   <div>
-      <div class="top-container">
-        <current-list></current-list>
-        <activity-list></activity-list>
+      <transition name="slide" mode="out-in">
+      <div class="top-container">        
+          <current-list></current-list>
+          <activity-list></activity-list>        
       </div>
+      </transition>
       <logbook-list></logbook-list>
       <!-- <p>API Data: {{info.data.results[1].name}}</p> -->
   </div>

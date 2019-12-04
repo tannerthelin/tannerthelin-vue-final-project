@@ -59,7 +59,36 @@ I use a custom directive (*on bind*) to check if the game's rating is ```0```. I
 
 
 ## Using animations & transitions
-
+I wrapped my ```router-view``` in a transition tag, giving me a nice little animation every time the user changes routes. I also added this transition tag to the search input on the **My Games** page.
+<br>
+```css
+.slide-enter-active {
+    animation: slide-in 150ms ease-out forwards;
+  }
+  .slide-leave-active {
+    animation: slide-out 150ms ease-out forwards;
+  }
+  @keyframes slide-in {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-out {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  }
+```
 
 ## Connecting to a server: Axios
 

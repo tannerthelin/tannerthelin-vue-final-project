@@ -3,9 +3,10 @@
         <h3>Currently playing</h3>
         <div class="list-container">
 
-            <current-game v-for="game in currentGames" :key="game.title" :game="game"></current-game>
-            
+            <current-game v-for="game in currentGames" :key="game.title" :game="game"></current-game>            
+
             <button class="add-button" v-on:click="addSelected = !addSelected"><i class="fa fa-plus-square-o"></i>Add new</button>     
+            <transition name="slide" mode="out-in">
             <autocomplete
                 class="autocomplete-input"
                 source="https://api.rawg.io/api/games?search="
@@ -15,7 +16,8 @@
                 placeholder="Search for game..."
                 v-show= "addSelected"
                 @selected= "submitSearch">
-            </autocomplete>           
+            </autocomplete>    
+            </transition>       
         </div>
     </div>
 </template>

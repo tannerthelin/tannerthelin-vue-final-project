@@ -11,8 +11,8 @@
                     <button class="button button-secondary">My Games</button>
                 </router-link>
             </div>
-        </div>
-        <img class="home-image" src="../assets/images/home-illustration.png" width="550px">
+        </div>        
+            <img class="home-image" src="../assets/images/home-illustration.png" width="550px">
     </div>
 </template>
 
