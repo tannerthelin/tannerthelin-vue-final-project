@@ -3,10 +3,15 @@
         <img class="main-image" src="../assets/images/signin-image.png" width="254px" height="461px">
         <div class="sign-in-container">
             <h3>Sign up for the beta</h3>
-            <div class="form-container">
-                <form action="">
-                    <input class="text-input" type="text" placeholder="Name" name="name">
-                    <input class="text-input" type="text" placeholder="Email" name="email">
+            <div class="form-container" v-if="!success.length">
+                <form 
+                    id="signin-form"
+                    @submit="checkForm"
+                    action="https://vuejs.org/"
+                    method="post">                      
+                    
+                    <input class="text-input" type="text" placeholder="Name" name="name" v-model="name">
+                    <input class="text-input" type="text" placeholder="Email" name="email" v-model="email">
                     <h3>Primary System</h3>
                     <div class="primary-system">
                         <!-- <label class="container">
@@ -66,12 +71,60 @@
                         </div>
 
                     </div>
-                    <button type="submit" class="button button-primary">Join the Waitlist</button>
+                    <input type="submit" class="button button-primary" value="Join the Waitlist">
+
+                   
                 </form>
-            </div>
+            </div> 
+             <p v-if="errors.length">
+                <ul>
+                <li class="error-message" v-for="error in errors" :key="error">{{ error }}</li>
+                </ul>
+            </p>  
+            <p v-if="success.length">
+                <ul>
+                <li class="success-message" v-for="success in success" :key="success">{{ success }}</li>
+                </ul>
+            </p> 
         </div>
     </div>
 </template>
+
+<script>
+
+export default {
+    data () {
+        return {
+            errors: [],
+            success: [],
+            name: null,
+            email: null,
+            system: null
+        }
+    },
+    methods: {
+        checkForm: function (e) {
+            this.success = [];
+
+            if (this.name && this.email) {
+                this.success.push('Thank you for enrolling in our beta program! You have been added to our beta list. We will reach out soon!');
+            }
+
+            this.errors = [];
+
+            if (!this.name) {
+                this.errors.push('Name required.');
+            }
+            if (!this.email) {
+                this.errors.push('Email required.');
+            }
+            e.preventDefault();
+        }
+    }
+}
+
+</script>
+
 
 
 <style scoped>
@@ -183,6 +236,34 @@
         background-color: #2C2C2C;
     }
 
+    .error-message {
+        color: #FF5C5C;
+        border: 1px solid #FF5C5C;
+        background-color: rgba(255, 92, 92, .2);
+        border-radius: 4px;
+        list-style-type: none;
+        text-align: center;
+        width: 100%;
+        padding: 8px 0px;
+        margin-bottom: 8px;
+    }
+
+    .success-message {
+        color: #10D48C;
+        border: 1px solid #10D48C;
+        background-color: rgba(16, 212, 140, .07);
+        border-radius: 4px;
+        list-style-type: none;
+        text-align: center;
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+
+    ul {
+        padding: 0px;
+    }
+
     @media (max-width: 800px) {
         .main-image {
             position: absolute;
@@ -288,6 +369,10 @@
 
     input[type=radio]:hover + label {
         color: black;
+    }
+
+    form {
+        border: 0px;
     }
 
 </style>
