@@ -12,6 +12,7 @@ Link to final project: [www.closed-beta.com](http://www.closed-beta.com)
 <br/>
 
 ## Use conditional logic & JavaScript array methods
+**Conditional Logic**<br>
 On the "My Games" page, the SEARCH input field is *conditionally rendered* by using ```v-show``` and tying the ADD NEW button to a boolean variable.  **Link to component:** [CurrentList.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/CurrentList.vue)
 
 ```vue
@@ -35,6 +36,9 @@ On the "My Games" page, the SEARCH input field is *conditionally rendered* by us
     }
 </script>
 ```
+
+**Javascript Array Methods**<br>
+When the user deletes a game from their list, it uses ```splice``` to remove the game from the list. When the user marks the game as complete, the app uses ```unshift``` to add it to the Logbook. Both of these actions also ```push``` a string to the Activity array.
 
 ## Encapsulate your code as VueJS single-file components
 
