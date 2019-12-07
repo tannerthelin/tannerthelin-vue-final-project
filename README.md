@@ -179,17 +179,16 @@ routes: [
 
 ## Manage your application's state using vuex
 As mentioned above, there are 4 arrays in the local store, used to track:<br> 
-- **User information** (*name, email, address*)
+- User information (*name, email, address*)
 - Current Games (*What games the user is currently playing?*)
 - Logged Games (*What games has the user finished?*)
 - Activity (*Log the user's activity*)
+
+The store is modified using mutations, which are called by actions. The mutations I use:
 <br>
-The store is modified using mutations, which are called by actions. The mutations I use:<br>
-- **Delete Game:** Delete a game from your list. 
-  - Currently these are two separate mutations, since the Logbook and Current Games are two different arrays in store. In the future, I'd like to figure out how to combine these into one.
-- **Complete Game:** Mark a *current* game as completed.
-  - This moves it to the Logbook.
-- **Modify Game:** Includes an axios call, used whenever a game is loaded or updated.
+1. **Delete Game:** Currently these are two separate mutations, since the Logbook and Current Games are two different arrays in store. In the future, I'd like to figure out how to combine these into one.
+2. **Complete Game:** Mark a *current* game as completed. This moves it to the Logbook.
+3. **Modify Game:** As mentioned above, this includes an axios call, and is used whenever a game is loaded or updated.
 <br>
 
 ```Javascript
