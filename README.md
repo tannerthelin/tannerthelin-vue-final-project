@@ -36,15 +36,15 @@ On the "My Games" page, the SEARCH input field is *conditionally rendered* by us
     }
 </script>
 ```
-<br>
+
 **Javascript Array Methods**<br>
 When the user deletes a game from their list, it uses ```splice``` to remove the game from the list. When the user marks the game as complete, the app uses ```unshift``` to add it to the Logbook. Both of these actions also ```push``` a string to the Activity array.
 
 ## Communicating between components (props & local store)
-**Props**
+**Props**<br>
 The *Current Games* and *Logged Games* both use ```props``` (pulling from their *parent* list container components) to get the data tied to each game.
 <br><br>
-**Local Store**
+**Local Store**<br>
 There are 4 arrays in the local store, used to track:<br> 
 - User information (*name, email, address*)
 - Current Games (*What games the user is currently playing?*)
@@ -52,8 +52,7 @@ There are 4 arrays in the local store, used to track:<br>
 - Activity (*Log the user's activity*)
 
 ## Present a form for user input that provides useful form validation and feedback
-On the *Sign-Up* page, the user can fill-out a form which would add them to the beta. Currently, this form doesn't really do anything, but it'd be cool if it added to a Mailchimp list in the future. The user fills out the fields, and will receive an error if they try to submit without a name or email. If they fill-out all fields, the form will disappear and they will see a success message. <br>
-**Link to list component:** [SignIn.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/SignIn.vue)
+On the *Sign-Up* page, the user can fill-out a form which would add them to the beta. Currently, this form doesn't really do anything, but it'd be cool if it added to a Mailchimp list in the future. The user fills out the fields, and will receive an error if they try to submit without a name or email. If they fill-out all fields, the form will be replaced with a success message. **Link to component:** [SignIn.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/SignIn.vue)
 <br>
 <img src="src/assets/images/Messages.png">
 
@@ -190,15 +189,18 @@ The store is modified using mutations, which are called by actions. The mutation
 - ```COMPLETE_GAME``` - Mark a game in the *Current Games* list as completed, moving it to the *Logbook*.
 - ```MODIFY_GAME``` - As mentioned above, this mutation includes an axios call, and is used whenever a game is loaded or updated.
 <br>
+
 ```Javascript
 'DELETE_GAME' (state, payload) {
     let index = state.currentGames.indexOf(payload);
     state.currentGames.splice(index, 1);
     state.activity.push("You deleted " + payload.title + " from your Currently Playing.");
-},
+}
 ```
 <br>
-The application also uses *getters* to retrieve the store information.<br>
+The application also uses *getters* to retrieve the store information.
+<br>
+
 ```Javascript
 getters: {
     getCurrent: state => {return state.currentGames},
