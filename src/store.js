@@ -102,10 +102,6 @@ export default new Vuex.Store({
             });
 
             // return payload;                
-        },
-        'MODIFY_RATING' (state, payload) {
-            let oldRating = payload.rating;
-            
         }
     },
     actions: {
