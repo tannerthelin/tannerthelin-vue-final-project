@@ -185,9 +185,9 @@ As mentioned above, there are 4 arrays in the local store, used to track:<br>
 - Activity (*Log the user's activity*)
 <br>
 The store is modified using mutations, which are called by actions. The mutations I use:<br>
-- **DELETE_GAME:** Delete a game from your list. Currently these are two separate mutations, since the *Logbook* and *Current Games* are two different arrays in *store*. In the future, I'd like to figure out how to combine these into one.
-- **COMPLETE_GAME:** Mark a game in the *Current Games* list as completed, moving it to the *Logbook*.
-- **MODIFY_GAME:** As mentioned above, this mutation includes an axios call, and is used whenever a game is loaded or updated.
+- DELETE_GAME: Delete a game from your list. Currently these are two separate mutations, since the Logbook and Current Games are two different arrays in store. In the future, I'd like to figure out how to combine these into one.
+- COMPLETE_GAME: Mark a game in the Current Gameslist as completed, moving it to the Logbook.
+- MODIFY_GAME: As mentioned above, this mutation includes an axios call, and is used whenever a game is loaded or updated.
 <br>
 
 ```Javascript
