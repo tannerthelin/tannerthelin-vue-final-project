@@ -36,7 +36,7 @@ On the "My Games" page, the SEARCH input field is *conditionally rendered* by us
     }
 </script>
 ```
-<br><br>
+<br>
 **Javascript Array Methods**<br>
 When the user deletes a game from their list, it uses ```splice``` to remove the game from the list. When the user marks the game as complete, the app uses ```unshift``` to add it to the Logbook. Both of these actions also ```push``` a string to the Activity array.
 

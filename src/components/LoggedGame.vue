@@ -9,6 +9,7 @@
                 <div v-if="ratingZero" class="rating-tooltip">
                     <p>Rate game</p>
                 </div>
+            <div class="trash-button" @click="deleteLogged(game)"></div>
         </div>
         <h2 class="game-title">{{game.shortTitle}}</h2>
         <h3 placeholder= "Date here">{{game.finished}}</h3>
@@ -52,7 +53,10 @@
                 this.game.rating = this.myRating;
                 this.ratingZero = false;
                 this.$store.dispatch("modifyGame", this.game);
-            }
+            },
+            deleteLogged(game) {
+                this.$store.dispatch("deleteLogged", game);
+            },
         },
         created() {
             this.$store.dispatch("modifyGame", this.game);
@@ -144,4 +148,31 @@
     .game-title {
         white-space: nowrap;
     }
+
+    .main-container:hover .trash-button{
+        opacity: 1;
+    }
+
+    .trash-button {
+        width: 33px;
+        opacity: 0;
+        background-position: center;
+        background-image: url('../assets/images/White-Trash.png');
+        background-size: contain;
+        display: block;
+        position: absolute;
+        right: 5px;
+        top: 0px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        z-index: 10;
+        height: 40px;
+        transition: .1s ease;
+    }
+
+    .trash-button:hover {
+        background-image: url('../assets/images/White-Trash-Hover.png');
+    }
+
+
 </style>

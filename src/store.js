@@ -53,6 +53,12 @@ export default new Vuex.Store({
             state.currentGames.splice(index, 1);
             state.activity.push("You deleted " + payload.title + " from your Currently Playing.");
         },
+
+        'DELETE_LOGGED' (state, payload) {
+            let index = state.loggedGames.indexOf(payload);
+            state.loggedGames.splice(index, 1);
+            state.activity.push("You deleted " + payload.title + " from your Logbook.");
+        },
         'COMPLETE_GAME' (state, payload) {
             let index = state.currentGames.indexOf(payload);
 
@@ -105,6 +111,9 @@ export default new Vuex.Store({
     actions: {
         deleteGame(context, game) {
             context.commit("DELETE_GAME", game);
+          },
+        deleteLogged(context, game) {
+            context.commit("DELETE_LOGGED", game);
           },
         completeGame(context, game) {
             context.commit("COMPLETE_GAME", game);

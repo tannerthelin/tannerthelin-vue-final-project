@@ -68,6 +68,6 @@ export default {
     }
 
     logbook-list {
-      width: 960px;
+      min-width: 960px;
     }
 </style>
