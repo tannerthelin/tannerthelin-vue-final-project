@@ -189,6 +189,9 @@ The store is modified using mutations, which are called by actions. The mutation
 - COMPLETE_GAME: Mark a game in the Current Gameslist as completed, moving it to the Logbook.
 - MODIFY_GAME: As mentioned above, this mutation includes an axios call, and is used whenever a game is loaded or updated.
 <br>
+- **Delete Game:** Delete a game from your list. Currently these are two separate mutations, since the Logbook and Current Games are two different arrays in store. In the future, I'd like to figure out how to combine these into one.
+- **Complete Game:** Mark a game in the Current Gameslist as completed, moving it to the Logbook.
+- **Modify Game:** As mentioned above, this mutation includes an axios call, and is used whenever a game is loaded or updated.
 
 ```Javascript
 'DELETE_GAME' (state, payload) {
