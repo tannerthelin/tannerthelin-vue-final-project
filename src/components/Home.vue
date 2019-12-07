@@ -2,7 +2,7 @@
     <div class="home-container">
         <div class="home-content">
             <h1>Track, log, &amp; rate <br>the games you play.</h1>
-            <h2>Closed Beta is in development, but you can sign up for the beta now!</h2>
+            <h2>Sign up for the beta today!</h2>
             <div class="button-container">
                 <router-link :to="{ name: 'sign-in'}">
                     <button class="button button-primary">Join</button>
