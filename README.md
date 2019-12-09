@@ -57,7 +57,7 @@ On the *Sign-Up* page, the user can fill-out a form which would add them to the 
 <img src="src/assets/images/Messages.png">
 
 ## Create & use a custom directive
-I use a custom directive (*on bind*) to check if the game's rating is ```0```. If it is, I toggle a boolean variable within that game called ```ratingZero```, which adds an overlay and a tooltip prompting the user to rate the game.
+The application uses a custom directive (*on bind*) to check if the game's rating is ```0```. If it is, the application toggles a boolean variable within that game called ```ratingZero```, which adds an overlay and a tooltip prompting the user to rate the game.
 <br/><br/>
 **Link to list component (with the directive):** [LogbookList.vue](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/components/LogbookList.vue)
 <br/>
@@ -86,7 +86,7 @@ checkForm: function (e) {
 ```
 
 ## Using animations & transitions
-I wrapped my ```router-view``` in a transition tag, giving me a nice little animation every time the user changes routes. I also added this transition tag to the search input on the **My Games** page.
+I wrapped my ```router-view``` in a transition tag, giving the application a nice little animation every time the user changes routes. I also added this transition tag to the search input on the **My Games** page.
 <br>
 
 ```css
@@ -119,7 +119,7 @@ I wrapped my ```router-view``` in a transition tag, giving me a nice little anim
 ```
 
 ## Connecting to a server: Axios
-For my dynamic data, I decided to use a video game database called [Rawg](https://rawg.io/). There may be a more efficient way of grabbing data in bulk, but whenever my application loads or modififes a game, I make an Axios call using on that game's ID in the *Rawg* database as my argument. Then I assign the game's name & image from the JSON file that is returned.<br><br>I also create a ```shortTitle``` that is shortened to a max of 16 characters, to be used for the logbook. <br><br>
+For my dynamic data, I decided to use a video game database called [Rawg](https://rawg.io/). There may be a more efficient way of grabbing data in bulk, but whenever my application loads or modififes a game, the application makes an Axios call using on that game's ID in the *Rawg* database as my argument. Then it assigns the game's name & image from the JSON file that is returned.<br><br>I also created a ```shortTitle``` that is shortened to a max of 16 characters, to be used for the logbook. <br><br>
 **Link to store, where Axios is called:** [store.js](https://github.com/tannerthelin/tannerthelin-vue-final-project/blob/master/src/store.js)
 ```Javascript
 'MODIFY_GAME' (state, payload) {
