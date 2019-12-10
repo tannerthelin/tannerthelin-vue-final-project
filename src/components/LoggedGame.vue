@@ -56,7 +56,7 @@
             },
             deleteLogged(game) {
                 this.$store.dispatch("deleteLogged", game);
-            },
+            }            
         },
         created() {
             this.$store.dispatch("modifyGame", this.game);
