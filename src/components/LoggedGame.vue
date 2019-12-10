@@ -5,10 +5,7 @@
             v-bind:class = "{ rateMe: ratingZero }" 
             v-bind:style="{ backgroundImage: gameImage }"
             >
-            <div id="overlay" v-if="ratingZero"></div>
-                <div v-if="ratingZero" class="rating-tooltip">
-                    <p>Rate game</p>
-                </div>
+            <div id="overlay" v-if="ratingZero"></div>                
             <div class="trash-button" @click="deleteLogged(game)"></div>
         </div>
         <h2 class="game-title">{{game.shortTitle}}</h2>
@@ -23,6 +20,9 @@
             :show-rating="false"
             @rating-selected="ratingChanged"
         ></heart-rating>
+        <div v-if="ratingZero" class="rating-tooltip">
+                    <p>Rate me!</p>
+                </div>
     </div>
 </template>
 
@@ -83,20 +83,21 @@
 <style scoped>
 
     .rating-tooltip {
-        background-color: black;
-        color: white;
+        /* background-color: rgba(0,0,0,0.25); */
+        background-color: transparent;
+        color: black;
         text-transform: uppercase;
-        font-size: 10px;
+        font-size: 9px;
         letter-spacing: 1px;
         text-align: center;
         font-weight: 600;
         border-radius: 200px;
         /* max-width: 80px; */
-        padding: 6px 10px;
+        /* padding: 4px 8px; */
         position: absolute;
-        bottom: 14px;
-        left: 23px;
-        border: 2px solid white;
+        bottom: 4px;
+        right: 0px;
+        /* border: 2px solid white; */
         z-index: 3;
     }
 
