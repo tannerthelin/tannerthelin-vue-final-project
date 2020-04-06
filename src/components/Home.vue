@@ -8,7 +8,7 @@
                     <button class="button button-primary">Join</button>
                 </router-link>
                 <router-link :to="{ name: 'dashboard'}">
-                    <button class="button button-secondary">My Games</button>
+                    <button class="button button-secondary">View Demo</button>
                 </router-link>
             </div>
         </div>        

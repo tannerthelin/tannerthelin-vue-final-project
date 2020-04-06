@@ -7,7 +7,7 @@
         <div class="main-nav" v-if="isHidden === false">
             <div class="main-nav-content">
                 <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'home'}">Home</router-link>
-                <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'dashboard'}">My Games</router-link>
+                <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'dashboard'}">View Demo</router-link>
                 <router-link @click.native="closeDropdown(isHidden)" :to="{ name: 'sign-in'}">Sign Up</router-link>
             </div>
         </div>
